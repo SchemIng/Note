@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">#303F9F</item>
+        <item name="colorAccent">#C5CAE9</item>
+    </style>
+
+    <style name="AppTheme.TitleTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/frame_white</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseStyle" />
+    <!-- TextStyle -->
+    <style name="AppTheme.TextStyle">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Body">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.SubHead">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.HeadLine">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTheme.TextStyle.Display">
+        <item name="android:textSize">34sp</item>
+    </style>
+    <!-- Activity Animation -->
+    <style name="NoteActivity" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/NoteActivityAnim</item>
+    </style>
+
+    <style name="EditActivity" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/EditActivityAnim</item>
+    </style>
+
+    <style name="NoteActivityAnim">
+        <item name="android:activityCloseExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <style name="EditActivityAnim">
+        <item name="android:activityOpenEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/push_up_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_up_out</item>
+    </style>
+</resources>
