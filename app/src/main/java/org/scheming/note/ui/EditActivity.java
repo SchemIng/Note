@@ -2,8 +2,10 @@ package org.scheming.note.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -21,6 +23,8 @@ import butterknife.InjectView;
 public class EditActivity extends AppCompatActivity {
     @InjectView(R.id.edit_content)
     EditText add_text;
+    @InjectView(R.id.app_bar)
+    Toolbar toolbar;
 
     private InputMethodManager manager;
     private NoteDao noteDao;
@@ -32,6 +36,7 @@ public class EditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
         ButterKnife.inject(this);
+        setSupportActionBar(toolbar);
 
         noteDao = NoteApplication.getInstance().getDaoSession().getNoteDao();
         noteId = getIntent().getLongExtra("id", -1);
@@ -73,4 +78,5 @@ public class EditActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

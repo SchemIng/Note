@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
@@ -40,22 +43,27 @@ public class NoteActivity extends AppCompatActivity implements
     FloatingActionButton addBtn;
     @InjectView(R.id.app_bar)
     Toolbar toolbar;
+    @InjectView(R.id.frame_drawer)
+    DrawerLayout drawerLayout;
 
     private RecyclerAdapter mAdapter;
     private NoteDao noteDao;
     private List<Note> notes;
+    private ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
         ButterKnife.inject(this);
-        setSupportActionBar(toolbar);
+
         init();
     }
 
 
     private void init() {
+        setSupportActionBar(toolbar);
+
         StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         noteDao = NoteApplication.getInstance().getDaoSession().getNoteDao();
 
@@ -71,24 +79,28 @@ public class NoteActivity extends AppCompatActivity implements
         mAdapter.setOnItemLongClickListener(this);
         recyclerView.setAdapter(mAdapter);
 
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
+        drawerLayout.setDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+
         Bmob.initialize(this, KEY);
     }
 
     @Override
     public void onClick(View v) {
         startActivityForResult(new Intent(this, EditActivity.class), ADD_NOTE);
-        User user = new User("123", "石皓洋");
-        user.save(this, new SaveListener() {
-            @Override
-            public void onSuccess() {
-                Toast.makeText(NoteActivity.this, "添加成功！", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-
-            }
-        });
+//        User user = new User("123", "石皓洋");
+//        user.save(this, new SaveListener() {
+//            @Override
+//            public void onSuccess() {
+//                Toast.makeText(NoteActivity.this, "添加成功！", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(int i, String s) {
+//
+//            }
+//        });
     }
 
     @Override
