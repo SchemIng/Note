@@ -29,11 +29,12 @@
             android:src="@drawable/ic_add_white" />
     </FrameLayout>
 
-    <android.support.design.widget.NavigationView
+    <fragment
+        android:id="@+id/frame_drawer_menu"
+        android:name="org.scheming.note.ui.DrawerFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:layout_marginRight="56dp"
-        app:menu="@menu/drawer" />
+        android:layout_gravity="start" />
+
 </android.support.v4.widget.DrawerLayout>
 
