@@ -1,4 +1,4 @@
-package org.scheming.note.view;
+package org.scheming.note.widget;
 
 import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;

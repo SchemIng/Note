@@ -18,6 +18,7 @@
     </style>
 
     <style name="AppTheme" parent="BaseStyle" />
+
     <!-- TextStyle -->
     <style name="AppTheme.TextStyle">
         <item name="android:fontFamily">sans-serif</item>

@@ -7,6 +7,7 @@ import android.util.Log;
 import org.scheming.greendao.dao.DaoMaster;
 import org.scheming.greendao.dao.DaoSession;
 import org.scheming.greendao.dao.NoteDao;
+import org.scheming.note.R;
 
 import java.lang.reflect.Field;
 

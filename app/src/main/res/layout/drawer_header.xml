@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_header"
     android:layout_width="match_parent"
     android:layout_height="178dp"
     android:background="@color/color_primary"
@@ -22,8 +23,7 @@
             android:text="Akash Bangad"
             android:textColor="#ffffff"
             android:textSize="14sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/email"
@@ -34,7 +34,14 @@
             android:text="akash.bangad93@gmail.com"
             android:textColor="#ffffff"
             android:textSize="14sp"
-            android:textStyle="normal"
-            />
+            android:textStyle="normal" />
     </LinearLayout>
+
+    <org.scheming.note.widget.CircleImageView
+        android:id="@+id/circleView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="38dp"
+        android:src="@drawable/head" />
 </RelativeLayout>
